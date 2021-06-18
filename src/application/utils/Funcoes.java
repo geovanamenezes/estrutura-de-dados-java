@@ -20,7 +20,7 @@ public class Funcoes{
     public int verificaSeFilmeExiste(Filme[] filmes, String nomeDoFilme){
         int contadorFilmes = 0;
         for (int i=0; i < filmes.length; i++){                      
-            if(filmes[i].getTitulo().contains(nomeDoFilme)){
+            if(filmes[i].getTitulo().toUpperCase().contains(nomeDoFilme.toUpperCase())){
                     exibeInformacoesFilme(filmes[i]);
                     contadorFilmes++;
             }
@@ -51,7 +51,7 @@ public class Funcoes{
     	if(sala.getCodigo() == 1) {
     		for(int l=0; l < 20; l++ ) {
     			for(int c=0; c < 10; c++ ) {
-        			if(lugares[l][c] == true) {
+        			if(lugares[c][l] == true) {
         				System.out.print(" X ");
         			}else {
         				System.out.print(" - ");
@@ -64,12 +64,12 @@ public class Funcoes{
     		for(int l=0; l < 20; l++ ) {
     			 for(int c=0; c < 8; c++ ) {      			
         				if(c==2 || c==4 | c==6) {
-        					if(lugares[l][c] == true)
+        					if(lugares[c][l] == true)
                 				System.out.print(" X");
         					else 
                 				System.out.print(" -");      					
         				}else {
-        					if(lugares[l][c] == true) 
+        					if(lugares[c][l] == true) 
                 				System.out.print("X");
         					else
                 				System.out.print("-");        					
@@ -81,6 +81,13 @@ public class Funcoes{
     		}
     	
     	}
+    
+    public void reservaLugar(Sessao sessao, int coluna, int fileira) {
+    	Sala sala = sessao.getSala();
+    	boolean[][] lugares = sessao.getLugares();
+    	lugares[coluna-1][fileira-1] = true;
+    	sessao.adicionaLugar();
+    }
     	
     }
 

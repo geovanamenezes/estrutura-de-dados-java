@@ -7,6 +7,7 @@ public class Filme {
 	private String sinopse;
 	private String genero;
 	private Atendente atendente;
+	private int quantidade = 0;
 
 	public Filme(int codigo, String titulo, String anoLancamento, String sinopse, String genero, Atendente atendente){
 		this.codigo = codigo;
@@ -15,6 +16,7 @@ public class Filme {
 		this.sinopse = sinopse;
 		this.genero = genero;
 		this.atendente = atendente;
+		this.quantidade = this.quantidade + 1; 
 	}
 
 	public String getTitulo() {

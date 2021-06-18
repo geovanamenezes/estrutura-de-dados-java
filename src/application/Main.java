@@ -56,7 +56,15 @@ public class Main {
                         
                         System.out.println("Qual o código da sessão? ");
                         int codigoSessao = Integer.parseInt(entrada.nextLine());
-                        f.verificaSalas(sessoes.get(codigoSessao-1));                   
+                        f.verificaSalas(sessoes.get(codigoSessao-1));
+                        System.out.println("Vamos escolher seu lugar");
+                        System.out.println("Número da coluna: (ex: se for a 4ª, colocar apenas 4)");
+                        int coluna = Integer.parseInt(entrada.nextLine());
+                        System.out.println("Número da fileira: (ex: se for a 6ª, colocar apenas 4)");
+                        int fileira = Integer.parseInt(entrada.nextLine());
+                        f.reservaLugar(sessoes.get(codigoSessao-1), coluna, fileira);
+                        System.out.println("Comprado!");
+
                     }
                     					
                 break;
@@ -92,6 +100,7 @@ public class Main {
 					}
 					break;
             }
+            System.out.println("Vamos retornar o menu, se desejar sair, pressione 6");
         }
 	}
 
