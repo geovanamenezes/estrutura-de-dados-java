@@ -11,7 +11,8 @@ public class Sessao {
 	private int quantidadeLugares;
 	private int lugaresPreenchidos = 0;
 
-	
+	public Sessao() {
+	}
 
 	public Sessao(int codigo, Sala sala, Filme filme, LocalTime horario) {
 		this.codigo = codigo;

@@ -10,6 +10,9 @@ public class Atendente {
         this.nome=nome;
         this.cpf=cpf;
     }
+    public Atendente(){
+
+    }
     
 	public int getCodigoAtendente() {
         return codigoAtendente;
@@ -22,12 +25,15 @@ public class Atendente {
     public String getNome() {
         return nome;
     }
+    
 
-    public void setCodigo(String nome){
-        this.nome=nome;
-    }
-
-    public String getCpf() {
+    public void setCodigoAtendente(int codigoAtendente) {
+		this.codigoAtendente = codigoAtendente;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getCpf() {
         return cpf;
     }
 
